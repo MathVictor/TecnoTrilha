@@ -1,6 +1,8 @@
+//Pegando o modelo de usuário e encriptação
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
+//Func para cadastrar usuário
 exports.register = async (req, res) => {
   const { nome, email, senha } = req.body;
   try {
@@ -12,6 +14,7 @@ exports.register = async (req, res) => {
   }
 };
 
+//Func para fazer login e salvar a sessão
 exports.login = async (req, res) => {
   const { email, senha } = req.body;
   const user = await User.findOne({ email });
@@ -29,6 +32,7 @@ exports.login = async (req, res) => {
   res.redirect('/dashboard');
 };
 
+//Func para logout do usuário
 exports.logout = (req, res) => {
   req.session.destroy(() => {
     res.redirect('/login.html');

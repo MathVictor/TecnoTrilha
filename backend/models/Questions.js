@@ -1,5 +1,7 @@
+//Import para o usar o mongo
 const mongoose = require('mongoose');
 
+//Cria o schema de questão para inserir no mongo
 const questionSchema = new mongoose.Schema({
   texto: String,
   opcoes: [

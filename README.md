@@ -1,4 +1,4 @@
-# TecnoTrilha
+## TecnoTrilha
 Projeto para a matéria Certificadora de Competência 3 da UTFPR
 
 #  Membros
@@ -7,3 +7,5 @@ Projeto para a matéria Certificadora de Competência 3 da UTFPR
 - Matheus Victor Martins
 - Tom Otsuki
 - Yuri Silvestre Admertides
+
+# Equipe 1

@@ -1,3 +1,4 @@
+//Placeholder para sistema de autenticação mais complexos, controla acesso de role
 module.exports = {
   requireLogin: (req, res, next) => {
     if (!req.session.user) return res.redirect('/login.html');
