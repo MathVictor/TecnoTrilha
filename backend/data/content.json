@@ -1,0 +1,20 @@
+{
+  "inspiração": [
+    { "nome": "Ada Lovelace", "descrição": "Pioneira da programação", "link": "https://pt.wikipedia.org/wiki/Ada_Lovelace" },
+    { "nome": "Radia Perlman", "descrição": "Criadora do protocolo Spanning Tree", "link": "https://pt.wikipedia.org/wiki/Radia_Perlman" }
+  ],
+  "cursos": [
+    { "nome": "Programação para Iniciantes", "plataforma": "Coursera", "link": "https://www.coursera.org/" },
+    { "nome": "HTML e CSS básico", "plataforma": "YouTube", "link": "https://www.youtube.com/" }
+  ],
+  "desafios": [
+    "Criar uma página HTML com seu nome e cor favorita",
+    "Montar um circuito LED simples no Tinkercad"
+  ],
+  "trilhas": {
+    "programacao": [ "https://developer.mozilla.org/", "https://www.w3schools.com/" ],
+    "design": [ "https://www.figma.com/", "https://www.canva.com/" ],
+    "engenharia": [ "https://www.tinkercad.com/", "https://www.autodesk.com/" ],
+    "robotica": [ "https://www.arduino.cc/", "https://scratch.mit.edu/" ]
+  }
+}

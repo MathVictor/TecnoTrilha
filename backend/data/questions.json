@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Se você fosse criar uma solução para um problema em sua escola, o que faria primeiro?",
+    "opcoes": [
+      { "texto": "Entender a rotina das pessoas envolvidas e buscar uma solução prática", "pontuacao": { "comunicacao": 2, "dados": 1 } },
+      { "texto": "Rascunhar o visual da solução em papel ou digital", "pontuacao": { "design": 2, "programacao": 1 } },
+      { "texto": "Criar um sistema automático que resolva parte do problema", "pontuacao": { "programacao": 2, "engenharia": 1 } },
+      { "texto": "Pesquisar soluções parecidas e tentar otimizar", "pontuacao": { "dados": 2, "redes": 1 } }
+    ]
+  },
+  {
+    "id": 2,
+    "pergunta": "Quando você vê algo funcionando mal (como um site ou aplicativo), o que te incomoda mais?",
+    "opcoes": [
+      { "texto": "A estética, falta harmonia", "pontuacao": { "design": 3 } },
+      { "texto": "Lentidão ou travamento", "pontuacao": { "engenharia": 2, "redes": 1 } },
+      { "texto": "Informação confusa", "pontuacao": { "comunicacao": 2, "dados": 1 } },
+      { "texto": "Dificuldade de encontrar onde clicar", "pontuacao": { "design": 1, "programacao": 2 } }
+    ]
+  },
+  {
+    "id": 3,
+    "pergunta": "Qual dessas atividades te parece mais divertida?",
+    "opcoes": [
+      { "texto": "Criar uma automação que faz algo sozinho", "pontuacao": { "programacao": 2, "engenharia": 1 } },
+      { "texto": "Fazer uma apresentação clara e envolvente", "pontuacao": { "comunicacao": 2, "design": 1 } },
+      { "texto": "Analisar dados e descobrir padrões", "pontuacao": { "dados": 3 } },
+      { "texto": "Pensar na estrutura de uma rede segura", "pontuacao": { "redes": 3 } }
+    ]
+  },
+  {
+    "id": 4,
+    "pergunta": "Ao trabalhar em grupo, qual papel você costuma assumir?",
+    "opcoes": [
+      { "texto": "Explica as ideias e organiza as tarefas", "pontuacao": { "comunicacao": 2, "dados": 1 } },
+      { "texto": "Cria um protótipo ou rascunho do que foi decidido", "pontuacao": { "design": 2, "programacao": 1 } },
+      { "texto": "Resolve problemas técnicos e cria soluções", "pontuacao": { "engenharia": 2, "programacao": 1 } },
+      { "texto": "Pesquisa e conecta informações", "pontuacao": { "dados": 2, "redes": 1 } }
+    ]
+  },
+  {
+    "id": 5,
+    "pergunta": "Em uma feira de ciências, o que você preferiria apresentar?",
+    "opcoes": [
+      { "texto": "Um robô ou automação simples", "pontuacao": { "engenharia": 3 } },
+      { "texto": "Um site interativo e bonito", "pontuacao": { "design": 2, "programacao": 1 } },
+      { "texto": "Um painel com dados e gráficos", "pontuacao": { "dados": 2, "comunicacao": 1 } },
+      { "texto": "Um sistema de rede inteligente entre dispositivos", "pontuacao": { "redes": 3 } }
+    ]
+  },
+  {
+    "id": 6,
+    "pergunta": "O que te chama atenção em um site ou aplicativo?",
+    "opcoes": [
+      { "texto": "Facilidade de uso", "pontuacao": { "design": 2, "programacao": 1 } },
+      { "texto": "Como os dados são apresentados", "pontuacao": { "dados": 2, "comunicacao": 1 } },
+      { "texto": "A tecnologia usada nos bastidores", "pontuacao": { "engenharia": 2, "redes": 1 } },
+      { "texto": "Se ele resolve um problema real", "pontuacao": { "comunicacao": 2, "programacao": 1 } }
+    ]
+  },
+  {
+    "id": 7,
+    "pergunta": "Você precisa ensinar algo para colegas. Como faz isso?",
+    "opcoes": [
+      { "texto": "Explico usando exemplos do cotidiano", "pontuacao": { "comunicacao": 2 } },
+      { "texto": "Mostro um passo a passo visual", "pontuacao": { "design": 2, "comunicacao": 1 } },
+      { "texto": "Escrevo um tutorial bem estruturado", "pontuacao": { "programacao": 2, "dados": 1 } },
+      { "texto": "Crio uma mini ferramenta ou simulação", "pontuacao": { "engenharia": 2, "programacao": 1 } }
+    ]
+  },
+  {
+    "id": 8,
+    "pergunta": "Um problema exige várias etapas para ser resolvido. O que você faz?",
+    "opcoes": [
+      { "texto": "Cria um fluxograma para entender", "pontuacao": { "dados": 2, "engenharia": 1 } },
+      { "texto": "Constrói uma solução prática logo de cara", "pontuacao": { "engenharia": 2, "programacao": 1 } },
+      { "texto": "Pesquisa como outras pessoas resolveram", "pontuacao": { "redes": 2, "dados": 1 } },
+      { "texto": "Consulta o grupo e organiza ideias", "pontuacao": { "comunicacao": 2, "design": 1 } }
+    ]
+  },
+  {
+    "id": 9,
+    "pergunta": "Se tivesse que aprender uma nova habilidade agora, o que escolheria?",
+    "opcoes": [
+      { "texto": "Programar com Python", "pontuacao": { "programacao": 3 } },
+      { "texto": "Criar interfaces com Figma", "pontuacao": { "design": 3 } },
+      { "texto": "Analisar dados com gráficos", "pontuacao": { "dados": 3 } },
+      { "texto": "Montar redes com equipamentos reais", "pontuacao": { "redes": 3 } }
+    ]
+  },
+  {
+    "id": 10,
+    "pergunta": "Como você gostaria de impactar o mundo com tecnologia?",
+    "opcoes": [
+      { "texto": "Criando soluções para melhorar a vida das pessoas", "pontuacao": { "comunicacao": 2, "programacao": 1 } },
+      { "texto": "Facilitando o acesso à informação com bons layouts", "pontuacao": { "design": 2, "comunicacao": 1 } },
+      { "texto": "Automatizando processos e criando sistemas úteis", "pontuacao": { "engenharia": 2, "programacao": 1 } },
+      { "texto": "Compreendendo dados e mostrando caminhos", "pontuacao": { "dados": 3 } }
+    ]
+  }
+]

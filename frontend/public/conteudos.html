@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conteúdos - TecnoTrilha</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Conteúdos Inspiradores</h1>
+  <div id="conteudos"></div>
+
+  <script>
+    fetch('/api/conteudos')
+      .then(res => res.json())
+      .then(conteudos => {
+        const container = document.getElementById('conteudos');
+        conteudos.forEach(item => {
+          const card = document.createElement('div');
+          card.innerHTML = `<h3>${item.titulo}</h3><p>${item.descricao}</p><a href="${item.link}" target="_blank">Acessar</a>`;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

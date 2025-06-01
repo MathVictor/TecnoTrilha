@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro - TecnoTrilha</title>
+  <link rel="stylesheet" href="style.css" />
+    <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <section class="hero-section animate">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>📝 Cadastro</h2>
+        <form action="/api/register" method="POST">
+          <input type="text" name="nome" placeholder="Nome completo" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+      <div class="hero-animation">
+        <lottie-player 
+          src="lottie/register.json"
+          background="transparent"
+          speed="1"
+          loop autoplay
+          style="width: 100%; max-width: 300px;">
+        </lottie-player>
+      </div>
+    </div>
+  </section>
+  <script src="scripts.js"></script>
+</body>
+</html>

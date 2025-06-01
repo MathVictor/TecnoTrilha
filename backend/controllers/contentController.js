@@ -1,0 +1,14 @@
+// backend/controllers/contentController.js
+const Content = require('../models/Content');
+
+const getConteudos = async (req, res) => {
+  try {
+    const conteudos = await Content.find();
+    res.json(conteudos);
+  } catch (err) {
+    console.error('Erro ao buscar conteúdos:', err);
+    res.status(500).json({ erro: 'Erro ao buscar conteúdos' });
+  }
+};
+
+module.exports = { getConteudos };
