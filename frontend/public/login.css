@@ -1,0 +1,33 @@
+.login-content{
+    display: flex;
+    gap: 5vw;
+    width: 100vw;
+    height: 100vh;
+
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-text{
+    flex: 0;
+    margin-left: 10rem;
+}
+
+.login-form{
+    width: 25vw;
+    justify-self: center;
+    gap: 0;
+}
+
+.login-label{
+    font-weight: 550;
+    margin: 1rem 1rem 1.2rem 0rem;
+    font-size: 1.2rem;
+}
+
+#login-buttom{
+    margin-top: 2rem;
+    height: 4rem;
+
+    font-size: 1.5rem;
+}

@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <title>Login - TecnoTrilha</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css"/>
     <!-- Lottie -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="scripts.js" defer></script>
 </head>
 <body>
   <section class="hero-section animate">
-    <div class="hero-content">
+    <div class="login-content">
       <div class="hero-text">
-        <h2>🔐 Login</h2>
-        <form action="/api/login" method="POST">
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="password" name="senha" placeholder="Senha" required>
-          <button type="submit">Entrar</button>
+        <h2>LOGIN</h2>
+        <form action="/api/login" method="POST" class="login-form">
+          <label for="email" class="login-label">E-MAIL</label>
+          <input type="email" name="email" placeholder="E-MAIL" class="text-box" required>
+          <label for="email" class="login-label">SENHA</label>
+          <input type="password" name="senha" placeholder="SENHA" class="text-box" required>
+          <button type="submit" id="login-buttom">ENTRAR</button>
         </form>
       </div>
       <div class="hero-animation">
