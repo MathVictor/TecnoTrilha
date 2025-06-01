@@ -1,3 +1,4 @@
+
 # TecnoTrilha
 Projeto para a matéria Certificadora de Competência 3 da UTFPR. **TecnoTrilha** é uma aplicação web interativa e gamificada que busca inspirar meninas do Ensino Fundamental II e Ensino Médio a explorarem caminhos acadêmicos e profissionais nas áreas de tecnologia e engenharia.
 
@@ -10,7 +11,6 @@ Este projeto é uma iniciativa do grupo **Meninas Digitais UTFPR-CP**, com o obj
 - Matheus Victor Martins
 - Tom Otsuki
 - Yuri Silvestre Admertides
-
 
 ## Funcionalidades
 
@@ -96,3 +96,4 @@ MONGO_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/main
 npm run dev
 Acesse o app em: http://localhost:3000
 ``
+

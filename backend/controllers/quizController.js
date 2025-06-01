@@ -1,8 +1,11 @@
+//Import para mexer com arquivos e caminhos
 const fs = require('fs');
 const path = require('path');
 
+//Pega as questões do JSON
 const questions = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/questions.json')));
 
+//Func para pegar uma pergunta do BD
 exports.getPergunta = (req, res) => {
   const progresso = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
   const pergunta = questions[progresso.atual];
@@ -11,6 +14,7 @@ exports.getPergunta = (req, res) => {
   res.json({ pergunta });
 };
 
+//Func para responder uma pergunta e adicionar pontuação de usuários
 exports.responder = (req, res) => {
   const { index } = req.body;
   const quiz = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
@@ -36,6 +40,7 @@ exports.responder = (req, res) => {
   res.json({ sucesso: true });
 };
 
+//Func para resetar a pontuação do quiz
 exports.resetar = (req, res) => {
   req.session.quiz = { atual: 0, respostas: [], pontos: {} };
   res.json({ resetado: true });
