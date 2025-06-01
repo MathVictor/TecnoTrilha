@@ -1,6 +1,7 @@
-// backend/controllers/contentController.js
+//Pegando o modelo de conteúdo
 const Content = require('../models/Content');
 
+//Colocando o conteúdo na página a partir do BD
 const getConteudos = async (req, res) => {
   try {
     const conteudos = await Content.find();
