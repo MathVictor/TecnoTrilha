@@ -12,6 +12,11 @@ Este projeto é uma iniciativa do grupo **Meninas Digitais UTFPR-CP**, com o obj
 - Tom Otsuki
 - Yuri Silvestre Admertides
 
+##  Pré-Requisito de Ambiente
+Node.js - v22.11.0
+Npm - 10.9.0
+git - 2.47.0
+
 ## Funcionalidades
 
 -  Teste vocacional gamificado (perguntas leves e direcionadas).
@@ -91,6 +96,8 @@ npm install
 ``
 MONGO_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/main
 ``
+(Para garantir o acesso na avaliação da entrega parcial, seria necessário o .env original, que estaremos enviando ao professor via e-mail, para evitar o compartilhamento de dados sensíveis no GitHub.)
+
 ### 5. Rode o servidor
 ``
 npm run dev
