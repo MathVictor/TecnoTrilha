@@ -19,8 +19,10 @@ body {
   font-family: var(--font);
   color: var(--preto);
   line-height: 1.6;
-  padding: 40px 20px;
   overflow-x: hidden;
+
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
