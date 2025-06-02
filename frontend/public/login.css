@@ -1,3 +1,11 @@
+.main-login-title{
+    font-size: 3rem;
+    text-align: center;
+
+    margin-bottom: 2rem;
+
+}
+
 .login-content{
     display: flex;
     gap: 5vw;
@@ -5,7 +13,7 @@
     height: 100vh;
 
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .hero-text{
