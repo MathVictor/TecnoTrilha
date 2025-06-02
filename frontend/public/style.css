@@ -19,6 +19,7 @@ body {
   font-family: var(--font);
   color: var(--preto);
   line-height: 1.6;
+
   overflow-x: hidden;
 
   height: 100vh;
@@ -28,7 +29,6 @@ body {
 .container {
   max-width: 960px;
   margin: auto;
-  padding: 40px 20px;
 }
 
 header {
@@ -175,7 +175,7 @@ body {
   background: #ffffff;
   font-family: 'DM Sans', sans-serif;
   color: #080404;
-  padding: 40px 20px;
+
 }
 
 .dashboard-title {
@@ -280,7 +280,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 30px;
 }
 
 .hero-content {
@@ -444,4 +443,8 @@ body {
 .resultado-card strong {
   font-size: 1.2rem;
   color: #e0146c;
+}
+
+.text-box{
+    height: 4rem;
 }

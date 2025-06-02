@@ -1,6 +1,7 @@
-// backend/models/Content.js
+//Import para usar o mongo
 const mongoose = require('mongoose');
 
+//Schema para pegar o conteúdo a ser colocado no site no mongo
 const contentSchema = new mongoose.Schema({
   titulo: String,
   descricao: String,

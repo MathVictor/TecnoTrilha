@@ -1,6 +1,8 @@
+//Rotas do BD e de encriptação de senha
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+//Cria o schema de usuários para inserir no mongo 
 const userSchema = new mongoose.Schema({
   nome: String,
   email: { type: String, unique: true },
