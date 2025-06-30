@@ -448,3 +448,45 @@ body {
 .text-box{
     height: 4rem;
 }
+#perfil-usuario {
+  margin-bottom: 2rem;
+  background-color: #f9f9ff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+}
+#perfil-usuario p {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+.trilhas-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.trilha-card {
+  background: #f5f5ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.trilha-card:hover {
+  transform: scale(1.02);
+}
+
+.trilha-card h3 {
+  margin-bottom: 0.5rem;
+  color: #d6288e;
+}
+
+.trilha-card a.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #d6288e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+}

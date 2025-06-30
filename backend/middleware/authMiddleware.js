@@ -1,14 +1,7 @@
-//Placeholder para sistema de autenticação mais complexos, controla acesso de role
-module.exports = {
-  requireLogin: (req, res, next) => {
-    if (!req.session.user) return res.redirect('/login.html');
-    next();
-  },
-
-  requireAdmin: (req, res, next) => {
-    if (!req.session.user || req.session.user.role !== 'admin') {
-      return res.status(403).send('Acesso negado');
-    }
-    next();
-  }
+exports.requireLogin = (req, res, next) => {
+	if (req.session && req.session.user) {
+		return next(); // Usuário autenticado, prossiga
+	}
+	// Redireciona para login se não estiver logado
+	res.redirect('/login.html');
 };

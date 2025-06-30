@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  
   <div class="container animate">
     <h1>🧠 Teste Vocacional</h1>
 
@@ -25,27 +26,44 @@
 
   <script>
     const descricoes = {
-      comunicacao: "📢 Você tem um perfil de <strong>Comunicadora</strong>! Gosta de interagir, explicar ideias e facilitar o entendimento entre pessoas. Perfeita para áreas de UX Writing, marketing digital ou gestão de produtos.",
-      dados: "📊 Seu perfil é <strong>Analista de Dados</strong>! Ama investigar padrões, organizar informações e traduzir números em soluções. Indicado para ciência de dados, BI e inteligência artificial.",
-      design: "🎨 Você é uma verdadeira <strong>Designer</strong>! Tem olhar criativo e pensa na experiência das pessoas. Pode brilhar com UI/UX, motion design, ou direção de arte digital.",
-      programacao: "💻 Seu perfil é <strong>Desenvolvedora</strong>! Ama resolver problemas com código e construir sistemas inteligentes. Perfeita para backend, frontend, apps e games.",
-      engenharia: "🛠️ Você pensa como uma <strong>Engenheira de Software</strong>! Gosta de automatizar, estruturar e criar sistemas robustos. Ideal para robótica, automação e desenvolvimento fullstack.",
-      redes: "🌐 Seu perfil é de <strong>Especialista em Redes</strong>! Gosta da lógica de comunicação entre sistemas. Pode atuar em infraestrutura, segurança da informação e IoT."
+      comunicacao: "📢 Você tem um perfil de <strong>Comunicadora</strong>! Gosta de interagir, explicar ideias e facilitar o entendimento entre pessoas.",
+      dados: "📊 Seu perfil é <strong>Analista de Dados</strong>! Ama investigar padrões e traduzir números em soluções.",
+      design: "🎨 Você é uma verdadeira <strong>Designer</strong>! Tem olhar criativo e pensa na experiência das pessoas.",
+      programacao: "💻 Seu perfil é <strong>Desenvolvedora</strong>! Ama resolver problemas com código e construir sistemas inteligentes.",
+      engenharia: "🛠️ Você pensa como uma <strong>Engenheira de Software</strong>! Ideal para robótica, automação e desenvolvimento fullstack.",
+      redes: "🌐 Seu perfil é de <strong>Especialista em Redes</strong>! Pode atuar em infraestrutura, segurança da informação e IoT."
     };
+
+    let perfilSalvo = false;
 
     async function carregarPergunta() {
       try {
-        const res = await fetch('/api/quiz/pergunta');
+        const res = await fetch('/api/quiz/pergunta', {
+          credentials: 'include'
+        });
         const data = await res.json();
 
         if (data.fim) {
           document.getElementById('quiz').style.display = 'none';
           document.getElementById('resultado').style.display = 'block';
 
-          const perfil = Object.entries(data.pontos).sort((a, b) => b[1] - a[1])[0][0];
-
-
+          const perfil = Object.entries(data.pontos || {}).sort((a, b) => b[1] - a[1])[0]?.[0];
+          document.getElementById('perfil').textContent = perfil ? `Seu perfil é: ${perfil}` : "Perfil não identificado.";
           document.getElementById('descricao').innerHTML = descricoes[perfil] || "Perfil não identificado.";
+
+          if (!perfilSalvo && perfil) {
+            try {
+              const salvar = await fetch('/api/quiz/salvar-perfil', {
+                method: 'POST',
+                credentials: 'include'
+              });
+              const resultado = await salvar.json();
+              console.log("Perfil salvo:", resultado);
+              perfilSalvo = true;
+            } catch (erro) {
+              console.error("Erro ao salvar perfil:", erro);
+            }
+          }
           return;
         }
 
@@ -63,7 +81,8 @@
             await fetch('/api/quiz/responder', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ index: i })
+              body: JSON.stringify({ index: i }),
+              credentials: 'include'
             });
             carregarPergunta();
           };
@@ -76,7 +95,10 @@
     }
 
     // Resetar progresso
-    fetch('/api/quiz/resetar', { method: 'POST' }).then(() => {
+    fetch('/api/quiz/resetar', {
+      method: 'POST',
+      credentials: 'include'
+    }).then(() => {
       carregarPergunta();
     });
 

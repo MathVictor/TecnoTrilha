@@ -1,47 +1,72 @@
-//Import para mexer com arquivos e caminhos
 const fs = require('fs');
 const path = require('path');
+const User = require('../models/User');
 
-//Pega as questões do JSON
+// Carrega perguntas do JSON
 const questions = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/questions.json')));
 
-//Func para pegar uma pergunta do BD
+// Puxar próxima pergunta
 exports.getPergunta = (req, res) => {
-  const progresso = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
-  const pergunta = questions[progresso.atual];
-  if (!pergunta) return res.json({ fim: true, pontos: progresso.pontos });
+	const progresso = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
+	const pergunta = questions[progresso.atual];
+	if (!pergunta) return res.json({ fim: true, pontos: progresso.pontos });
 
-  res.json({ pergunta });
+	res.json({ pergunta });
 };
 
-//Func para responder uma pergunta e adicionar pontuação de usuários
+// Resposta ao usuário
 exports.responder = (req, res) => {
-  const { index } = req.body;
-  const quiz = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
-  const pergunta = questions[quiz.atual];
+	const { index } = req.body;
+	const quiz = req.session.quiz || { atual: 0, respostas: [], pontos: {} };
+	const pergunta = questions[quiz.atual];
 
-  if (!pergunta) return res.status(400).json({ erro: 'Pergunta inválida' });
+	if (!pergunta) return res.status(400).json({ erro: 'Pergunta inválida' });
 
-  const opcao = pergunta.opcoes[index];
-  if (!opcao) return res.status(400).json({ erro: 'Opção inválida' });
+	const opcao = pergunta.opcoes[index];
+	if (!opcao) return res.status(400).json({ erro: 'Opção inválida' });
 
-  // Acumula pontuação
-  for (let area in opcao.pontuacao) {
-    quiz.pontos[area] = (quiz.pontos[area] || 0) + opcao.pontuacao[area];
-  }
+	// Lógica de pontuação por área
+	for (let area in opcao.pontuacao) {
+		quiz.pontos[area] = (quiz.pontos[area] || 0) + opcao.pontuacao[area];
+	}
 
-  quiz.atual++;
-  req.session.quiz = quiz;
+	quiz.atual++;
+	req.session.quiz = quiz;
 
-  if (quiz.atual >= questions.length) {
-    return res.json({ fim: true, pontos: quiz.pontos });
-  }
+	if (quiz.atual >= questions.length) {
+		return res.json({ fim: true, pontos: quiz.pontos });
+	}
 
-  res.json({ sucesso: true });
+	res.json({ sucesso: true });
 };
 
-//Func para resetar a pontuação do quiz
+// Reset do progresso
 exports.resetar = (req, res) => {
-  req.session.quiz = { atual: 0, respostas: [], pontos: {} };
-  res.json({ resetado: true });
+	req.session.quiz = { atual: 0, respostas: [], pontos: {} };
+	res.json({ resetado: true });
+};
+
+// Salva o perfil vocacional no MongoDB
+exports.salvarResultado = async (req, res) => {
+	if (!req.session.user) {
+		return res.status(401).json({ erro: 'Não autenticado' });
+	}
+
+	const pontuacoes = req.session.quiz?.pontos || {};
+	const perfilMaisForte = Object.entries(pontuacoes).sort((a, b) => b[1] - a[1])[0]?.[0];
+
+	if (!perfilMaisForte) {
+		return res.status(400).json({ erro: 'Perfil não identificado' });
+	}
+
+	try {
+		await User.findByIdAndUpdate(req.session.user._id, {
+			perfilVocacional: perfilMaisForte
+		});
+
+		res.json({ sucesso: true, perfil: perfilMaisForte });
+	} catch (err) {
+		console.error('Erro ao salvar perfil:', err);
+		res.status(500).json({ erro: 'Erro ao salvar perfil' });
+	}
 };

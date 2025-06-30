@@ -1,11 +1,10 @@
-//Imports para roteamento
 const express = require('express');
 const router = express.Router();
 
-//Pega os conteúdos puxados do BD para colocar na página
+// Módulo para obter conteúdos
 const { getConteudos } = require('../controllers/contentController');
 
-//Rota para colocar os conteúdos
+//Rota de Conteúdos
 router.get('/', getConteudos);
 
 module.exports = router;

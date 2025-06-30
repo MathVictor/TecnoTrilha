@@ -27,8 +27,8 @@ mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
     await Content.deleteMany({});
     await Content.insertMany(dados);
-    console.log('✅ Conteúdos inseridos no banco main');
+    console.log('Conteúdos inseridos no banco main');
     process.exit();
   })
-  .catch(err => console.error('❌ Erro ao conectar no MongoDB:', err));
+  .catch(err => console.error('Erro ao conectar no MongoDB:', err));
 

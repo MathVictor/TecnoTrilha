@@ -1,0 +1,62 @@
+{
+	"programacao": [
+		{
+			"titulo": "Frontend com HTML e CSS",
+			"link": "https://www.freecodecamp.org/learn"
+		},
+		{
+			"titulo": "Lógica de Programação",
+			"link": "https://curso.emvideoaula.com.br/logica"
+		}
+	],
+	"dados": [
+		{
+			"titulo": "Fundamentos de SQL",
+			"link": "https://www.khanacademy.org/computing/computer-programming/sql"
+		},
+		{
+			"titulo": "Ciência de Dados com Python",
+			"link": "https://cursos.alura.com.br/formacao-data-science"
+		}
+	],
+	"design": [
+		{
+			"titulo": "UI/UX Design para Iniciantes",
+			"link": "https://uxdesign.cc"
+		},
+		{
+			"titulo": "Figma para iniciantes",
+			"link": "https://figma.com"
+		}
+	],
+	"engenharia": [
+		{
+			"titulo": "Engenharia de Software com Java",
+			"link": "https://cursos.alura.com.br"
+		},
+		{
+			"titulo": "Introdução à Robótica",
+			"link": "https://www.coursera.org/learn/robotics"
+		}
+	],
+	"redes": [
+		{
+			"titulo": "Redes de Computadores",
+			"link": "https://www.cisco.com"
+		},
+		{
+			"titulo": "Segurança da Informação",
+			"link": "https://cryptoparty.in"
+		}
+	],
+	"comunicacao": [
+		{
+			"titulo": "UX Writing",
+			"link": "https://uxwritinghub.com"
+		},
+		{
+			"titulo": "Gestão de Produto",
+			"link": "https://www.coursera.org/learn/product-management"
+		}
+	]
+}

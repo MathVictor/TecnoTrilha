@@ -1,11 +1,9 @@
-//Imports para roteamento
 const express = require('express');
 const router = express.Router();
-const auth = require('../controllers/authController');
+const authController = require('../controllers/authController');
 
-//Rotas básicas de CRUD(login, cadastro, logout)
-router.post('/register', auth.register);
-router.post('/login', auth.login);
-router.get('/logout', auth.logout);
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+router.get('/logout', authController.logout);
 
 module.exports = router;

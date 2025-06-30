@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Conteúdos - TecnoTrilha</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulheres Inspiradoras - TecnoTrilha</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Conteúdos Inspiradores</h1>
-  <div id="conteudos"></div>
+  <div class="container">
+    <h1>👩‍💻 <span style="color: #e0146c;">Mulheres Inspiradoras</span></h1>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+      Essas são histórias reais de liderança feminina, criatividade e superação na área da tecnologia e inovação.
+    </p>
 
-  <script>
-    fetch('/api/conteudos')
-      .then(res => res.json())
-      .then(conteudos => {
-        const container = document.getElementById('conteudos');
-        conteudos.forEach(item => {
-          const card = document.createElement('div');
-          card.innerHTML = `<h3>${item.titulo}</h3><p>${item.descricao}</p><a href="${item.link}" target="_blank">Acessar</a>`;
-          container.appendChild(card);
-        });
-      });
-  </script>
+    <div class="trilhas-grid">
+<div class="trilha-card">
+  <h3>Larissa Suzuki</h3>
+  <p>Engenheira e cientista da computação (brasileira‑italiana‑britânica), trabalha no Google e colabora com a NASA no desenvolvimento da “Internet interplanetária”.</p>
+  <a href="https://en.wikipedia.org/wiki/Larissa_Suzuki" target="_blank" class="btn">Ver história</a>
+</div>
+
+<div class="trilha-card">
+  <h3>Carolina Gil Marcelino</h3>
+  <p>Pesquisadora de IA no Brasil, única brasileira a ganhar a bolsa Marie Curie (2019) para desenvolver projetos de IA em energia sustentável.</p>
+  <a href="https://en.wikipedia.org/wiki/Carolina_Marcelino" target="_blank" class="btn">Ver história</a>
+</div>
+
+<div class="trilha-card">
+  <h3>Mariana Costa Checa</h3>
+  <p>Co-fundadora da <em>Laboratoria</em>, treinando milhares de mulheres latino-americanas em programação e design, com reconhecimento global.</p>
+  <a href="https://en.wikipedia.org/wiki/Mariana_Costa_Checa" target="_blank" class="btn">Ver história</a>
+</div>
+
+<div class="trilha-card">
+  <h3>R‑Ladies (Gabriela de Queiroz)</h3>
+  <p>Fenômeno global de comunidade em ciência de dados, fundado por brasileira – presente em mais de 200 cidades ensinando R a mulheres.</p>
+  <a href="https://en.wikipedia.org/wiki/R-Ladies" target="_blank" class="btn">Ver história</a>
+</div>
+
+    </div>
+
+    <div class="cta" style="margin-top: 40px;">
+      <a href="dashboard.html" class="btn secondary">← Voltar ao painel</a>
+    </div>
+  </div>
 </body>
 </html>
