@@ -19,11 +19,10 @@ git - 2.47.0
 
 ## Funcionalidades
 
--  Teste vocacional gamificado (perguntas leves e direcionadas).
--  Cálculo de perfil com base em trilhas tecnológicas.
--  Conteúdo complementar: perfis inspiradores, cursos gratuitos e atividades práticas.
--  Interface acessível e inclusiva.
--  Área administrativa para gestão de jogadoras, postagens e módulos.
+-  Teste vocacional gamificado (perguntas leves e direcionadas).
+-  Diagnóstico do perfil vocacional com base em trilhas tecnológicas.
+-  Conteúdo complementar: perfis inspiradores, disponibilização de links úteis para o desenvolvimento das habilidades de perfil vocacional diagnosticado.
+-  Interface acessível e inclusiva.
 
 ---
 
