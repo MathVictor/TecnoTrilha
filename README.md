@@ -81,6 +81,8 @@ git - 2.47.0
 
 ##  Como Rodar o Projeto
 
+Siga as etapas abaixo, ou siga os procedimentos apresentados no vídeo [clicando aqui](https://drive.google.com/file/d/1tl-KTWm96wKUkEdCgwcRJ53LxT98AAO0/view?usp=sharing) .
+
 ### 1. Clone o repositório
 
 ``
